@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plot Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        img {
+            border: 5px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 80%;
+        }
+        .container {
+            background-color: white;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Data Plot</h1>
+        <p>This plot represents the data from 'your_data_file.txt'. It illustrates ... [Add your explanatory text here]</p>
+        <img id="plotImage" src="/plot" alt="My Plot">
+    </div>
+
+    <script>
+        function refreshImage() {
+            var img = document.getElementById('plotImage');
+            var date = new Date();
+            img.src = "/plot?v=" + date.getTime();
+        }
+
+        setInterval(refreshImage, 1000); // Refresh every 1000 milliseconds (1 second)
+    </script>
+</body>
+</html>
